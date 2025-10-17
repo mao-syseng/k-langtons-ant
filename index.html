@@ -3,20 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./favicon.ico">
+    <link rel="icon" href="./favicon.ico" />
     <title>kjs</title>
     <style>
       * {
         font-family: monospace;
         font-size: large;
-        color: #f0f6f0;
-        background: #222323;
+        color: #222323;
+        background: #f0f6f0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        * {
+          color: #f0f6f0;
+          background: #222323;
+        }
       }
     </style>
   </head>
   <body onload="eval(parse(k.textContent))">
     <pre>turmites in k</pre>
-    <hr>
+    <hr />
     <pre id="src"></pre>
     <pre id="res"></pre>
     <script src="./k.js"></script>
