@@ -12,7 +12,6 @@
         color: #222323;
         background: #f0f6f0;
       }
-
       @media (prefers-color-scheme: dark) {
         * {
           color: #f0f6f0;
@@ -22,16 +21,21 @@
     </style>
   </head>
   <body onload="eval(parse(k.textContent))">
-    <pre>turmites in k</pre>
+    <pre>langtons ant in jtye/k</pre>
     <hr />
-    <pre id="src"></pre>
     <pre id="res"></pre>
     <script src="./k.js"></script>
     <script src="./parse.js"></script>
+    <script>
+      addEventListener("keydown", (e) => {})
+    </script>
     <script id="k" type="text/k">
-      ma:0*(50*!50)^!2500
+      ap:1 1
+      fg:0*!100
+      ai:(10*ap[1])+ap[0]
+      fg[ai]:1-fg[ai]
+      ma:10^fg
       rm:`ma.map(r=>r.join(' ')).join('\n')`
-      src.textContent:k.textContent
       res.textContent:rm
     </script>
   </body>
