@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./favicon.ico" />
-    <title>kjs</title>
+    <title>k langtons ant</title>
     <style>
       * {
         font-family: monospace;
@@ -21,7 +21,7 @@
     </style>
   </head>
   <body>
-    <pre>langtons ant in jtye/k</pre>
+    <h3>langtons ant in <a href="https://ktye.github.io/jtye/index.html">jtye/k</a></h3>
     <hr />
     <pre id="res"></pre>
     <script src="./k.js"></script>
@@ -41,8 +41,8 @@
       n=50
       fg=mul(0,til(n*n))
       ap=[25,25]
-      const parsed=parse(k.textContent)
-      addEventListener("keydown", (e) => {eval(parsed)})
+      pa=parse(k.textContent)
+      setInterval(()=>eval(pa),25)
     </script>
   </body>
 </html>
