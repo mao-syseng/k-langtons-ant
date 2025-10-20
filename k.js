@@ -158,3 +158,4 @@ parse=$=>{$=(($.constructor===String)?token($):$).filter(x=>!((1<x.length&&x[0]=
  while(L($)==";")$.pop();$.reverse()
  return join(l(),";")
 }
+ep=(t)=>eval(parse(t));

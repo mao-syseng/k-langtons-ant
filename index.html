@@ -20,23 +20,31 @@
       }
     </style>
   </head>
-  <body onload="eval(parse(k.textContent))">
+  <body>
     <pre>langtons ant in jtye/k</pre>
     <hr />
     <pre id="res"></pre>
     <script src="./k.js"></script>
     <script src="./parse.js"></script>
-    <script>
-      addEventListener("keydown", (e) => {})
-    </script>
     <script id="k" type="text/k">
-      ap:1 1
+      dir:0
+      dirs:(0 -1; 1 0; 0 1; -1 0)
       fg:0*!100
       ai:(10*ap[1])+ap[0]
       fg[ai]:1-fg[ai]
       ma:10^fg
+      ap:ap+dirs[dir]
       rm:`ma.map(r=>r.join(' ')).join('\n')`
       res.textContent:rm
+    </script>
+    <script>
+      ap=[4,4]
+      ep(k.textContent)
+      addEventListener("keydown", (e) => {
+        console.log('run again')
+        console.log('ap',ap)
+        ep(k.textContent)
+      })
     </script>
   </body>
 </html>
