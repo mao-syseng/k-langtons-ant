@@ -27,20 +27,18 @@
     <script src="./k.js"></script>
     <script id="k" type="text/k">
       ds:(0 -1; 1 0; 0 1; -1 0)
-      i:(n*p[1])+p[0]
+      i:(50*p[1])+p[0]
       v[i]:1-v[i]
-      d:`(d+(v[i]==0?1:-1)+4)%4`
+      d:mod[4;d-1+2*~v[i]]
       p:p+ds[d]
-      m:n^v
-      res.textContent:`m.map(r => r.join(' ')).join('\n').replace(/0/g, '.')`
+      m:50^v                                   
+      res.textContent:join["\n";50^("  ";". ")m]
     </script>
     <script>
-      d=0
-      n=50
-      v=mul(0,til(n*n))
-      p=[25,25]
+      d=0;p=[25,25];
+      v=mul(0,til(2500))
       pa=parse(k.textContent)
-      setInterval(()=>eval(pa),25)
+      setInterval(()=>eval(pa),15)
     </script>
   </body>
 </html>
