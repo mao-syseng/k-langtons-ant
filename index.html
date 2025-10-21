@@ -26,21 +26,21 @@
   <body>
     <fieldset>
       <legend>langtons ant in jtye/k</legend>
-      <pre id="res"></pre>
+      <pre id="r"></pre>
     </fieldset>
-    <fieldset><legend>src</legend><pre id="src"></pre></fieldset>
+    <fieldset><legend>src</legend><pre id="c"></pre></fieldset>
     <script src="./k.js"></script>
     <script id="k" type="text/k">
       v[i]:1-v[i]
       d:mod[4;d-1+2*~v[i]]
       i:i+(-50 1 50 -1)[d]
-      res.textContent:join["\n";50^("  ";"⋅ ")v]
+      r.textContent:join["\n";50^("  ";"⋅ ")v]
     </script>
     <script>
       d=0;i=1225;v=mul(0,til(2500));
-      pa=parse(k.textContent)
-      src.textContent=k.textContent
-      setInterval(()=>eval(pa),new URLSearchParams(location.search).get("s")||25)
+      p=parse(k.textContent)
+      c.textContent=k.textContent
+      setInterval(()=>eval(p),new URLSearchParams(location.search).get("s")||25)
     </script>
   </body>
 </html>
