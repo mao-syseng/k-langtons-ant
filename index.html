@@ -41,7 +41,7 @@
       d=0;p=[25,25];v=mul(0,til(2500));
       pa=parse(k.textContent)
       src.textContent=k.textContent
-      setInterval(()=>eval(pa),10)
+      setInterval(()=>eval(pa),new URLSearchParams(location.search).get("s")||25)
     </script>
   </body>
 </html>
