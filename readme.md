@@ -28,3 +28,10 @@ d:mod[4;d-1+2*~v[i]]                        / from ktye: "in apl/j/k modulo uses
 p:p+ds[d]           
 m:n^v                                       
 res.textContent:join["\n";50^("  ";". ")m]  / using join from k instead of js, also makes it simpler to map 0's and 1's to whatever strings i want
+
+
+## v3
+v[i]:1-v[i]                                 / update vector at ants index
+d:mod[4;d-1+2*~v[i]]                        / calculate next direction
+i:i+(-50 1 50 -1)[d]                        / update ant index based on direction
+res.textContent:join["\n";50^("  ";"⋅ ")v]  / cut vector into a matrix and render in html
