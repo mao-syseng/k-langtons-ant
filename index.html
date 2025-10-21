@@ -18,27 +18,30 @@
           background: #222323;
         }
       }
+      fieldset {
+        width: fit-content;
+      }
     </style>
   </head>
   <body>
-    <h3>langtons ant in <a href="https://ktye.github.io/jtye/index.html">jtye/k</a></h3>
-    <hr />
-    <pre id="res"></pre>
+    <fieldset>
+      <legend>langtons ant in jtye/k</legend>
+      <pre id="res"/>
+    </fieldset>
+    <fieldset><legend>src</legend><pre id="src"/></fieldset>
     <script src="./k.js"></script>
     <script id="k" type="text/k">
-      ds:(0 -1; 1 0; 0 1; -1 0)
       i:(50*p[1])+p[0]
       v[i]:1-v[i]
       d:mod[4;d-1+2*~v[i]]
-      p:p+ds[d]
-      m:50^v                                   
-      res.textContent:join["\n";50^("  ";". ")m]
+      p:p+(0 -1; 1 0; 0 1; -1 0)[d]
+      res.textContent:join["\n";50^("  ";"⋅ ")v]
     </script>
     <script>
-      d=0;p=[25,25];
-      v=mul(0,til(2500))
+      d=0;p=[25,25];v=mul(0,til(2500));
       pa=parse(k.textContent)
-      setInterval(()=>eval(pa),15)
+      src.textContent=k.textContent
+      setInterval(()=>eval(pa),10)
     </script>
   </body>
 </html>
