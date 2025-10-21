@@ -31,14 +31,13 @@
     <fieldset><legend>src</legend><pre id="src"/></fieldset>
     <script src="./k.js"></script>
     <script id="k" type="text/k">
-      i:(50*p[1])+p[0]
       v[i]:1-v[i]
       d:mod[4;d-1+2*~v[i]]
-      p:p+(0 -1; 1 0; 0 1; -1 0)[d]
+      i:i+(-50 1 50 -1)[d]
       res.textContent:join["\n";50^("  ";"⋅ ")v]
     </script>
     <script>
-      d=0;p=[25,25];v=mul(0,til(2500));
+      d=0;i=1225;v=mul(0,til(2500));
       pa=parse(k.textContent)
       src.textContent=k.textContent
       setInterval(()=>eval(pa),new URLSearchParams(location.search).get("s")||25)
