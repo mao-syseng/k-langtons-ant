@@ -11,6 +11,7 @@ m   grid matrix
 </pre>
 
 ## v1
+```
 ds:(0 -1; 1 0; 0 1; -1 0)     / vector of direction vectors to be applied to the ant position
 i:(n*p[1])+p[0]               / calculating index of the ants position, based on x,y of the matrix
 v[i]:1-v[i]                   / flipping to 0 or 1 on the ants current position
@@ -18,9 +19,10 @@ d:`(d+(v[i]==0?1:-1)+4)%4`    / using js to calculate the new direction for the 
 p:p+ds[d]                     / updating ant position, using the direction vector
 m:n^v                         / convert flat vector to a matrix
 res.textContent:`m.map(r => r.join(' ')).join('\n').replace(/0/g, '.')` / js: map to strings and replace 0 with .
-
+```
 
 ## v2, with help from ktye
+```
 ds:(0 -1; 1 0; 0 1; -1 0)         
 i:(n*p[1])+p[0]                 
 v[i]:1-v[i]                              
@@ -28,10 +30,12 @@ d:mod[4;d-1+2*~v[i]]                        / from ktye: "in apl/j/k modulo uses
 p:p+ds[d]           
 m:n^v                                       
 res.textContent:join["\n";50^("  ";". ")m]  / using join from k instead of js, also makes it simpler to map 0's and 1's to whatever strings i want
-
+```
 
 ## v3
+```
 v[i]:1-v[i]                                 / update vector at ants index
 d:mod[4;d-1+2*~v[i]]                        / calculate next direction
 i:i+(-50 1 50 -1)[d]                        / update ant index based on direction
 res.textContent:join["\n";50^("  ";"⋅ ")v]  / cut vector into a matrix and render in html
+```
