@@ -21,6 +21,9 @@
       fieldset {
         width: fit-content;
       }
+      #r {
+        font-size: 10px;
+      }
     </style>
   </head>
   <body>
@@ -33,11 +36,11 @@
     <script id="k" type="text/k">
       v[i]:1-v[i]
       d:mod[4;d-1+2*~v[i]]
-      i:i+(-50 1 50 -1)[d]
-      r.textContent:join["\n";50^("  ";"⋅ ")v]
+      i:i+(-100 1 100 -1)[d]
+      r.textContent:join["\n";100^("  ";"# ")v]
     </script>
     <script>
-      d=0;i=1225;v=mul(0,til(2500));
+      d=0;i=4550;v=mul(0,til(10000));
       p=parse(k.textContent)
       c.textContent=k.textContent
       setInterval(()=>eval(p),new URLSearchParams(location.search).get("s")||25)
