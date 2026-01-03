@@ -40,9 +40,9 @@
       r.textContent:join["\n";100^("  ";"# ")v]
     </script>
     <script>
-      d=0;i=4550;v=mul(0,til(10000));
-      p=parse(k.textContent)
-      c.textContent=k.textContent
+      d=0;i=4550;v=mul(0,til(10000)); // Grid is 100x100, so 4550 is center. Start at direction 0
+      p=parse(k.textContent)          // k is the dom element that has the k code, parse it with jtye/k
+      c.textContent=k.textContent     // Show the code in c dom element
       setInterval(()=>eval(p),new URLSearchParams(location.search).get("s")||25)
     </script>
   </body>
